@@ -7,4 +7,4 @@ This repository contains all the library code contained in the `utils` folder. T
 
 See the image below for how to download/pull source code into your local machine.
 
-![Github Howto](images/Github-howto-sourcecode.png)
+![Github Howto](https://github.com/COS30008DataStructPatternJan2022/lectures/blob/main/images/Github-howto-sourcecode.png)

@@ -15,6 +15,8 @@
 // for list
 #include <list>
 
+#include <iterator>
+
 using namespace std;
 
 /* A shared space for a set of utility (commonly-used) functions 
@@ -47,7 +49,7 @@ namespace toolkit {
     return str;
   }
 
-  void printIntVector(vector<int> v) {
+  void printIntVector(const vector<int> & v) {
     cout << "[";
     int sz = v.size();
     int idx = 0;
@@ -59,7 +61,14 @@ namespace toolkit {
     cout << endl;
   }
 
-  void printList(list<int> v) {
+  void printVector(const vector<int>& vec) {
+    // Adapted from: https://stackoverflow.com/a/16229897
+    copy(vec.cbegin(), 
+      vec.cend(), 
+      ostream_iterator<int>(std::cout, " "));
+  }
+
+  void printList(const list<int> & v) {
     cout << "{";
     int sz = v.size();
     int idx = 0;

@@ -37,7 +37,27 @@ namespace toolkit {
     cout << endl;
   }
 
-  string arrToString(int*arr, int length) {
+  template <typename T> void printArr(T* arr, int length) {
+    cout << "[";
+    for (int i = 0 ; i < length; i++) {
+      cout << arr[i] << ((i < length-1) ? "," : "");
+    }
+    cout << "]";
+    cout << endl;
+  }
+
+/*   string arrToString(int*arr, int length) {
+    ostringstream os;
+    os << "[";
+    for (int i = 0 ; i < length; i++) {
+      os << arr[i] << ((i < length-1) ? "," : "");
+    }
+    os << "]";
+    string str(os.str());
+
+    return str;
+  } */
+  template <typename T> string arrToString(T*arr, int length) {
     ostringstream os;
     os << "[";
     for (int i = 0 ; i < length; i++) {
@@ -61,14 +81,43 @@ namespace toolkit {
     cout << endl;
   }
 
-  void printVector(const vector<int>& vec) {
+  template <typename T> void printVector(const vector<T> & v) {
+    cout << "[";
+    int sz = v.size();
+    int idx = 0;
+    for (const T& i : v) {
+      cout << i << ((idx < sz - 1) ? "," : "");
+      idx++;
+    }
+    cout << "]";
+    cout << endl;
+  }
+
+/*   void printVector(const vector<int>& vec) {
+    // Adapted from: https://stackoverflow.com/a/16229897
+    copy(vec.cbegin(), 
+      vec.cend(), 
+      ostream_iterator<int>(std::cout, " "));
+  } */
+  template <typename T> void printVector2(const vector<T>& vec) {
     // Adapted from: https://stackoverflow.com/a/16229897
     copy(vec.cbegin(), 
       vec.cend(), 
       ostream_iterator<int>(std::cout, " "));
   }
 
-  void printList(const list<int> & v) {
+/*   void printList(const list<int> & v) {
+    cout << "{";
+    int sz = v.size();
+    int idx = 0;
+    for (auto i : v) {
+      cout << i << ((idx < sz - 1) ? "," : "");
+      idx++;
+    }
+    cout << "}";
+    cout << endl;
+  } */
+  template <typename T> void printList(const list<T> & v) {
     cout << "{";
     int sz = v.size();
     int idx = 0;

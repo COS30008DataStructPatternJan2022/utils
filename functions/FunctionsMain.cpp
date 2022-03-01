@@ -10,12 +10,14 @@ int main() {
 
   cout << "Array: " << arrToString(arr, length) << endl;
 
-  cout << "Array: ";
+  cout << "Array: " << endl;
+  printArr(arr, length);  // template function: recommended
   printIntArr(arr, length);
 
   // vector does not need length to be passed as parameter
   vector<int> v = {5,4,3,2,1};
-  cout << "Vector: "; 
+  cout << "Vector: " << endl; 
+  printVector(v);   // template function: recommended
   printIntVector(v);
 
   return 0;

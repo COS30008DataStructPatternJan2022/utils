@@ -5,7 +5,7 @@
   - Why does function definition order matter in C/C++?
     https://stackoverflow.com/questions/4757705/why-do-functions-need-to-be-declared-before-they-are-used
  */
-#pragma(once)
+#pragma once
 
 #include <iostream>
 // for vector
@@ -127,5 +127,14 @@ namespace toolkit {
     }
     cout << "}";
     cout << endl;
+  }
+
+  /**
+   * @brief swaps element ith with element jth of aArray
+   */
+  template <typename T> void swap(T * aArray, const int & i, const int & j) {
+    T tmp = aArray[i];
+    aArray[i] = aArray[j];  
+    aArray[j] = tmp;
   }
 }
